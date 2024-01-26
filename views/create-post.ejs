@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('includes/head', { title: 'Add new post' }) %>
+  <link rel="stylesheet" href="/styles/forms.css">
+</head>
+
+<body>
+  <%- include('includes/header') %>
+  <main>
+    <h1>Create an Appointment</h1>
+    <form action="/posts" method="POST">
+      <div class="form-control">
+        <label for="doctor">Select Doctor</label>
+        <select id="doctor" name="doctor">
+          <% for (const doctor of doctors) { %>
+            <option value="<%= doctor.doctor_id %>"><%= doctor.surname%> <%= doctor.first_name%></option>
+          <% } %>
+        </select>
+      </div>
+      <div class="form-control">
+        <label for="procedure">Select Procedure</label>
+        <select id="procedure" name="procedure">
+          <% for (const procedure of procedures) { %>
+            <option value="<%= procedure.procedure_id %>"><%= procedure.procedure_name%></option>
+          <% } %>
+        </select>
+      </div>
+      <div class="form-control">
+        <label for="content">What hurts you?</label>
+        <textarea id="content" name="text" required rows="5"></textarea>
+      </div>
+      <div class="form-control">
+        <label for="date">Type Date</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+      <div class="form-control">
+        <label for="time">Type Hour</label>
+        <input type="time" id="time" name="time" required>
+      </div>
+      <button class="btn">Add Appointment</button>
+    </form>
+  </main>
+</body>
+
+</html>

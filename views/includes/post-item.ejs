@@ -1,0 +1,10 @@
+<article class="post-item">
+  <h2><%= appointment.procedure_name %></h2>
+  <p class="post-item-author">With dr. <%= appointment.surname%> <%= appointment.first_name%></p>
+  <p><%= appointment.date.toISOString()%> - <%= appointment.time%></p>
+  <!-- <div class="post-actions">
+    <button class="btn btn-alt">Delete Appointment</button>
+    <a href="/posts/<%= appointment.appointment_id%>/edit">Edit Appointment</a>
+    <a class="btn" href="/posts/<%= appointment.appointment_id %>">View Appointment</a>
+  </div> -->
+</article>

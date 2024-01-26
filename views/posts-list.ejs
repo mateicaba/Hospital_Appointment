@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('includes/head', { title: 'Your Appointments' }) %>
+  <link rel="stylesheet" href="/styles/posts.css">
+</head>
+
+<body>
+  <%- include('includes/header') %>
+  <main id="all-posts">
+    <h1>All Appointments</h1>
+    <% if (!appointments ||appointments.length === 0) { %>
+      <p>No Appointments found. Want to schedule one?</p>
+      <a class="btn" href="/create-post">Create a new Appointment</a>
+    <% } else { %>
+      <ol id="posts-list">
+        <% for (const appointment of [appointments]) { %>
+          <li>
+            <%- include('includes/post-item', { appointment: appointment }) %>
+          </li>
+        <% } %>
+      </ol>
+    <% } %>
+  </main> 
+</body>
+
+</html>
+
+</html>

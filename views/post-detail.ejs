@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('includes/head', { title: appointment.name }) %>
+  <link rel="stylesheet" href="/styles/posts.css">
+</head>
+
+<body>
+  <%- include('includes/header') %>
+  <main id="post-detail">
+    <h1><%= appointment.name %>></h1>
+    <section id="post-meta">
+    <time datetime="<%= appointment.date %>"><%= post.date %></time>
+    </section>
+    <hr>
+    <section>
+      <p id="body"><%= appointment.text %></p>
+    </section>
+  </main>
+</body>
+
+</html>
